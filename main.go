@@ -7,10 +7,10 @@ import (
 )
 
 func main() {
-	// Echoのインスタンス作る
+	// Echoインスタンス作成
 	e := echo.New()
 
-	// 全てのリクエストで差し込みたいミドルウェア（ログとか）はここ
+	// 全てのリクエストで差し込みたいミドルウェア（ログとか）
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
@@ -18,16 +18,5 @@ func main() {
 	e.GET("/hello", handler.MainPage())
 
 	// サーバー起動
-	e.Start(":1323")    //ポート番号指定してね
+	e.Start(":1323") 
 }
-
-/*
-   ____    __
-  / __/___/ /  ___
- / _// __/ _ \/ _ \
-/___/\__/_//_/\___/ v3.3.dev
-High performance, minimalist Go web framework
-https://echo.labstack.com
-____________________________________O/_______
-                                    O\
-*/
